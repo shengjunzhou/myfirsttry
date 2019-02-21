@@ -14,6 +14,6 @@ interface Productdao {
 	public void deleproduct(Product product);
 	public Product query(String id);
 	public List<Product> findall();
-	
+	public  List<Product> jdbcc();
 	
 }

@@ -36,6 +36,9 @@ public class Product {
 		this.protype = protype;
 		this.price = price;
 	}
+	public Product() {
+		
+	}
 	
 
 	
