@@ -37,20 +37,7 @@ public class Listservlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		ProductImp pro=new ProductImp();
 		List<Product> list1 =pro.findall();
-		
-		String html="<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" /><title>商品列表</title></head><body>";
-		html+="<table border ='1' align='center' width='600px'";
-		html+="<tr><th>编号</th><th>商品名称</th><th>商品型号</th><th>商品价格</th></tr>";
-		if(list1!=null) {
-			for(Product proo:list1) {
-			html+="<tr><td>"+proo.getId()+"</td><td><a href='"+request.getContextPath()+"/DetailServlet?id="+proo.getId()+"'>"+proo.getProname()+"</a></td><td>"+proo.getProtype()+"</td><td>"+proo.getPrice()+"</td></tr>";
-			
-			}
-		}
-		
-		html+="</body></head></html>";
-		
-		response.getWriter().write(html);
+		request.setAttribute("html", list1);
 //		Cookie[] coo=request.getCookies();
 //		for(Cookie cki:coo) {
 //			if(cki.getName().equals("proco")) {
@@ -63,7 +50,7 @@ public class Listservlet extends HttpServlet {
 //			}
 //			}
 			
-			
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
 
