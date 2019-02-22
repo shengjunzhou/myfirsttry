@@ -21,8 +21,8 @@
 			<tr><td><%=proo.getId()%></td>
 			<td><a href="<%=request.getContextPath()%>/DetailServlet?id=<%=proo.getId()%>"><%=proo.getProname()%></a></td>
 			<td><%=proo.getProtype()%></td>
-			<td><%=proo.getPrice()%></td></tr>
-<% 
+			<td><%=proo.getPrice()%></td><td><a href="<%=request.getContextPath()%>/daoservlet?dele=<%=proo.getId()%>">删除</td></tr>
+<% 			
 			}
 		}
 %>
