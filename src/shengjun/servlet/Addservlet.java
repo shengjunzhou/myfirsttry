@@ -8,18 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shengjun.daoo.ProductImp;
+import shengjun.entity.Product;
 
 /**
- * Servlet implementation class daoservlet
+ * Servlet implementation class Addservlet
  */
-@WebServlet("/daoservlet")
-public class daoservlet extends HttpServlet {
+
+public class Addservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public daoservlet() {
+    public Addservlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,13 +29,7 @@ public class daoservlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html,charset=utf-8");
-		String a=request.getParameter("dele");
-		ProductImp pro=new ProductImp();
-		request.setAttribute("aa", a);
-		pro.deleproduct(a);
-		
-		request.getRequestDispatcher("detai.jsp").forward(request, response);
+		doPost(request, response);
 	}
 
 	/**
@@ -42,7 +37,23 @@ public class daoservlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		
+		response.setContentType("text/html;charset=utf-8");
+		Product po=new Product();
+	
+		po.setId(request.getParameter("id"));
+		po.setProname((String)request.getParameter("proname"));
+		po.setPrice(Double.parseDouble(request.getParameter("price")));
+		po.setProtype((String)request.getParameter("protype"));
+		
+//		String id=po.getId();
+//		String 	productname=po.getProname();
+//		
+//		String producttype=po.getProtype();
+//		Double price=po.getPrice();
+		ProductImp.addproduct(po);
+		response.getWriter().write("增加了商品");
 	}
 
 }

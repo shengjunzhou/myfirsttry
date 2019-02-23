@@ -19,46 +19,40 @@ public class JdbcUtil {
 			e.printStackTrace();
 		}
 		return null;	
-		
+	
 	}
-	
 
-	
-	public static void closeJdbc(ResultSet pre,Connection con,Statement ss) {
-		if(pre!=null) {
+	public static void closeJdbc(ResultSet pre, Connection con, Statement ss) {
+		if (pre != null) {
 			try {
 				pre.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			
+
 		}
-		if(con!=null) {
+		if (con != null) {
 			try {
 				con.close();
 			} catch (SQLException e) {
-			
+
 				e.printStackTrace();
 			}
 		}
-		
-		
-		
-		if(ss!=null) {
+
+		if (ss != null) {
 			try {
 				con.close();
 			} catch (SQLException e) {
-			
+
 				e.printStackTrace();
 			}
 		}
-		
-	
+
 	}
 
-
- {
+	{
 		// TODO Auto-generated method stub
-		
+
 	}
 }

@@ -12,6 +12,16 @@
     <servlet-name>DetailServlet</servlet-name>
     <servlet-class>shengjun.servlet.DetailServlet</servlet-class>
   </servlet>
+  
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Addservlet</servlet-name>
+    <servlet-class>shengjun.servlet.Addservlet</servlet-class>
+  </servlet>
+  
+  
+  
   <servlet-mapping>
     <servlet-name>ListServlet</servlet-name>
     <url-pattern>/ListServlet</url-pattern>
@@ -19,5 +29,9 @@
   <servlet-mapping>
     <servlet-name>DetailServlet</servlet-name>
     <url-pattern>/DetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Addservlet</servlet-name>
+    <url-pattern>/Addservlet</url-pattern>
   </servlet-mapping>
 </web-app>
