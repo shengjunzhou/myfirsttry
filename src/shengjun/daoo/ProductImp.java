@@ -14,6 +14,7 @@ import shengjun.util.JdbcUtil;
 
 public class ProductImp {
 
+// 好久以前写的了
 	// 增加商品
 	public static   void addproduct(Product product) {
 		Connection con = null;
